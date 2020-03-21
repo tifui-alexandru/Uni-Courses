@@ -1,0 +1,240 @@
+Tipul testului: numere generate random
+Dimensiunea vectorului: 20
+Valoarea maxima: 20
+selection-sort sorteaza in 0.000007 secunde
+mergesort sorteaza in 0.000063 secunde
+timsort sorteaza in 0.000005 secunde
+quicksort sorteaza in 0.000033 secunde
+heapsort sorteaza in 0.000018 secunde
+radixsort sorteaza in 0.000061 secunde
+STL sort sorteaza in 0.000006 secunde
+Cea mai rapida sortare manuala este timsort
+
+Tipul testului: numere generate random
+Dimensiunea vectorului: 1000
+Valoarea maxima: 1000
+selection-sort sorteaza in 0.001626 secunde
+mergesort sorteaza in 0.001445 secunde
+timsort sorteaza in 0.000383 secunde
+quicksort sorteaza in 0.000311 secunde
+heapsort sorteaza in 0.000629 secunde
+radixsort sorteaza in 0.000369 secunde
+STL sort sorteaza in 0.000251 secunde
+Cea mai rapida sortare manuala este quicksort
+
+Tipul testului: numere generate random
+Dimensiunea vectorului: 10000
+Valoarea maxima: 10000000
+selection-sort sorteaza in 0.080650 secunde
+mergesort sorteaza in 0.011777 secunde
+timsort sorteaza in 0.003669 secunde
+quicksort sorteaza in 0.002467 secunde
+heapsort sorteaza in 0.004250 secunde
+radixsort sorteaza in 0.001393 secunde
+STL sort sorteaza in 0.001677 secunde
+Cea mai rapida sortare manuala este radixsort
+
+Tipul testului: numere generate random
+Dimensiunea vectorului: 100000
+Valoarea maxima: 1000000000
+selection-sort sorteaza in 7.902172 secunde
+mergesort sorteaza in 0.126603 secunde
+timsort sorteaza in 0.048611 secunde
+quicksort sorteaza in 0.027351 secunde
+heapsort sorteaza in 0.056765 secunde
+radixsort sorteaza in 0.014583 secunde
+STL sort sorteaza in 0.021449 secunde
+Cea mai rapida sortare manuala este radixsort
+
+Tipul testului: numere generate random
+Dimensiunea vectorului: 500000
+Valoarea maxima: 2147483647
+selection-sort sorteaza in 193.466504 secunde
+mergesort sorteaza in 0.616448 secunde
+timsort sorteaza in 0.270317 secunde
+quicksort sorteaza in 0.146326 secunde
+heapsort sorteaza in 0.322487 secunde
+radixsort sorteaza in 0.074576 secunde
+STL sort sorteaza in 0.116657 secunde
+Cea mai rapida sortare manuala este radixsort
+
+Tipul testului: ordine descrescatoare
+Dimensiunea vectorului: 20
+Valoarea maxima: 20
+selection-sort sorteaza in 0.000002 secunde
+mergesort sorteaza in 0.000017 secunde
+timsort sorteaza in 0.000002 secunde
+quicksort sorteaza in 0.000004 secunde
+heapsort sorteaza in 0.000005 secunde
+radixsort sorteaza in 0.000018 secunde
+STL sort sorteaza in 0.000001 secunde
+Cea mai rapida sortare manuala este selection-sort
+
+Tipul testului: ordine descrescatoare
+Dimensiunea vectorului: 1000
+Valoarea maxima: 1000
+selection-sort sorteaza in 0.001517 secunde
+mergesort sorteaza in 0.000845 secunde
+timsort sorteaza in 0.000226 secunde
+quicksort sorteaza in 0.000169 secunde
+heapsort sorteaza in 0.000309 secunde
+radixsort sorteaza in 0.000145 secunde
+STL sort sorteaza in 0.000053 secunde
+Cea mai rapida sortare manuala este radixsort
+
+Tipul testului: ordine descrescatoare
+Dimensiunea vectorului: 10000
+Valoarea maxima: 10000000
+selection-sort sorteaza in 0.155309 secunde
+mergesort sorteaza in 0.010165 secunde
+timsort sorteaza in 0.003128 secunde
+quicksort sorteaza in 0.001369 secunde
+heapsort sorteaza in 0.003798 secunde
+radixsort sorteaza in 0.001406 secunde
+STL sort sorteaza in 0.000593 secunde
+Cea mai rapida sortare manuala este quicksort
+
+Tipul testului: ordine descrescatoare
+Dimensiunea vectorului: 100000
+Valoarea maxima: 1000000000
+selection-sort sorteaza in 15.454489 secunde
+mergesort sorteaza in 0.107959 secunde
+timsort sorteaza in 0.039641 secunde
+quicksort sorteaza in 0.014153 secunde
+heapsort sorteaza in 0.047714 secunde
+radixsort sorteaza in 0.014592 secunde
+STL sort sorteaza in 0.006840 secunde
+Cea mai rapida sortare manuala este quicksort
+
+Tipul testului: ordine descrescatoare
+Dimensiunea vectorului: 500000
+Valoarea maxima: 2147483647
+selection-sort sorteaza in 404.873170 secunde
+mergesort sorteaza in 0.546029 secunde
+timsort sorteaza in 0.225375 secunde
+quicksort sorteaza in 0.071884 secunde
+heapsort sorteaza in 0.270789 secunde
+radixsort sorteaza in 0.073551 secunde
+STL sort sorteaza in 0.036180 secunde
+Cea mai rapida sortare manuala este quicksort
+
+Tipul testului: ordine aproape crescatoare
+Dimensiunea vectorului: 20
+Valoarea maxima: 20
+selection-sort sorteaza in 0.000002 secunde
+mergesort sorteaza in 0.000018 secunde
+timsort sorteaza in 0.000001 secunde
+quicksort sorteaza in 0.000002 secunde
+heapsort sorteaza in 0.000005 secunde
+radixsort sorteaza in 0.000018 secunde
+STL sort sorteaza in 0.000001 secunde
+Cea mai rapida sortare manuala este timsort
+
+Tipul testului: ordine aproape crescatoare
+Dimensiunea vectorului: 1000
+Valoarea maxima: 1000
+selection-sort sorteaza in 0.000037 secunde
+mergesort sorteaza in 0.000894 secunde
+timsort sorteaza in 0.000184 secunde
+quicksort sorteaza in 0.000149 secunde
+heapsort sorteaza in 0.000287 secunde
+radixsort sorteaza in 0.000146 secunde
+STL sort sorteaza in 0.000065 secunde
+Cea mai rapida sortare manuala este selection-sort
+
+Tipul testului: ordine aproape crescatoare
+Dimensiunea vectorului: 10000
+Valoarea maxima: 10000000
+selection-sort sorteaza in 0.003200 secunde
+mergesort sorteaza in 0.010396 secunde
+timsort sorteaza in 0.002781 secunde
+quicksort sorteaza in 0.001464 secunde
+heapsort sorteaza in 0.003726 secunde
+radixsort sorteaza in 0.001400 secunde
+STL sort sorteaza in 0.000818 secunde
+Cea mai rapida sortare manuala este radixsort
+
+Tipul testului: ordine aproape crescatoare
+Dimensiunea vectorului: 100000
+Valoarea maxima: 1000000000
+selection-sort sorteaza in 0.307703 secunde
+mergesort sorteaza in 0.109722 secunde
+timsort sorteaza in 0.036791 secunde
+quicksort sorteaza in 0.015926 secunde
+heapsort sorteaza in 0.046513 secunde
+radixsort sorteaza in 0.014021 secunde
+STL sort sorteaza in 0.010177 secunde
+Cea mai rapida sortare manuala este radixsort
+
+Tipul testului: ordine aproape crescatoare
+Dimensiunea vectorului: 500000
+Valoarea maxima: 2147483647
+selection-sort sorteaza in 7.733267 secunde
+mergesort sorteaza in 0.557358 secunde
+timsort sorteaza in 0.213000 secunde
+quicksort sorteaza in 0.084577 secunde
+heapsort sorteaza in 0.277690 secunde
+radixsort sorteaza in 0.073332 secunde
+STL sort sorteaza in 0.056781 secunde
+Cea mai rapida sortare manuala este radixsort
+
+Tipul testului: distributie neuniforma
+Dimensiunea vectorului: 20
+Valoarea maxima: 20
+selection-sort sorteaza in 0.000002 secunde
+mergesort sorteaza in 0.000018 secunde
+timsort sorteaza in 0.000001 secunde
+quicksort sorteaza in 0.000003 secunde
+heapsort sorteaza in 0.000005 secunde
+radixsort sorteaza in 0.000018 secunde
+STL sort sorteaza in 0.000002 secunde
+Cea mai rapida sortare manuala este timsort
+
+Tipul testului: distributie neuniforma
+Dimensiunea vectorului: 1000
+Valoarea maxima: 1000
+selection-sort sorteaza in 0.000785 secunde
+mergesort sorteaza in 0.000902 secunde
+timsort sorteaza in 0.000233 secunde
+quicksort sorteaza in 0.000163 secunde
+heapsort sorteaza in 0.000315 secunde
+radixsort sorteaza in 0.000151 secunde
+STL sort sorteaza in 0.000110 secunde
+Cea mai rapida sortare manuala este radixsort
+
+Tipul testului: distributie neuniforma
+Dimensiunea vectorului: 10000
+Valoarea maxima: 10000000
+selection-sort sorteaza in 0.076042 secunde
+mergesort sorteaza in 0.010975 secunde
+timsort sorteaza in 0.003468 secunde
+quicksort sorteaza in 0.001995 secunde
+heapsort sorteaza in 0.004332 secunde
+radixsort sorteaza in 0.001336 secunde
+STL sort sorteaza in 0.001467 secunde
+Cea mai rapida sortare manuala este radixsort
+
+Tipul testului: distributie neuniforma
+Dimensiunea vectorului: 100000
+Valoarea maxima: 1000000000
+selection-sort sorteaza in 7.748233 secunde
+mergesort sorteaza in 0.119492 secunde
+timsort sorteaza in 0.045912 secunde
+quicksort sorteaza in 0.022620 secunde
+heapsort sorteaza in 0.054876 secunde
+radixsort sorteaza in 0.013726 secunde
+STL sort sorteaza in 0.019106 secunde
+Cea mai rapida sortare manuala este radixsort
+
+Tipul testului: distributie neuniforma
+Dimensiunea vectorului: 500000
+Valoarea maxima: 2147483647
+selection-sort sorteaza in 199.230136 secunde
+mergesort sorteaza in 0.645419 secunde
+timsort sorteaza in 0.279403 secunde
+quicksort sorteaza in 0.125675 secunde
+heapsort sorteaza in 0.354029 secunde
+radixsort sorteaza in 0.074014 secunde
+STL sort sorteaza in 0.113106 secunde
+Cea mai rapida sortare manuala este radixsort
+
