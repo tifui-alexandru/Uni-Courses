@@ -2,7 +2,7 @@
 #define TIMSORT_H
 #include <bits/stdc++.h>
 #include "mergesort.h"
-#include "selectionsort.h"
+#include "insertionsort.h"
 
 namespace tim {
 	void sort(int* __begin, int* __end) {
@@ -12,7 +12,7 @@ namespace tim {
 		for (start = __begin; __end - start > 0; start += run) {
 			stop = start + run;
 			if (__end - stop < 0) stop = __end;
-			selection::sort(start, stop);
+			insertion::sort(start, stop);
 		}
 
 		for (int sz = run; sz < __end - __begin; sz <<= 1)

@@ -4,12 +4,12 @@
 #include "heapsort.h"
 #include "radixsort.h"
 #include "timsort.h"
-#include "selectionsort.h"
+#include "insertionsort.h"
 
 std::ifstream fin("input.txt");
 std::ofstream fout("output.txt");
 
-const std::string sorting_alg[] = {"selection-sort", "mergesort", "timsort", "quicksort", "heapsort", "radixsort", "STL sort"};
+const std::string sorting_alg[] = {"insertion-sort", "mergesort", "timsort", "quicksort", "heapsort", "radixsort", "STL sort"};
 double sorting_time[7];
 
 void get_sorted_arr(int* __begin1, int* __end1, int* __begin2, int* __end2) {
@@ -29,7 +29,7 @@ void test_sort_alg(int idx, int* v, int N, int* sorted_arr) {
 	switch (idx) {
 		case 0:
 			start = clock();
-			selection::sort(v, v + N);
+			insertion::sort(v, v + N);
 			stop = clock();
 			break;
 		case 1:
