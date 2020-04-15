@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include "automation.cpp"
+#include "automaton.cpp"
 
 using namespace std;
 
@@ -7,7 +7,7 @@ ifstream fin("input.txt");
 ofstream fout("output.txt");
 
 int main() {
-    Automation A;
+    Automaton A;
     fin >> A;
     A.transform();
     fout << A;
