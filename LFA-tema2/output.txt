@@ -1,11 +1,16 @@
 Type = Minimal-DFA
-2 states
-4 transitions
+5 states
+8 transitions
 The transitions are:
 0 1 a
-0 1 b
+0 2 b
 1 0 a
-1 0 b
+1 3 b
+2 3 b
+3 4 a
+3 2 b
+4 3 b
 Initial state: 0
-1 final states:
+2 final states:
+3 
 0 

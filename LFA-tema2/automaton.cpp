@@ -135,7 +135,7 @@ void Automaton::DFA_to_minimalDFA() {
     // Mark pairs of nodes
     std::set < std::pair <int, int> > unmarked;
     for (int i = 0; i < no_states; ++i)
-        for (int j = i; j < no_states; ++j){
+        for (int j = i + 1; j < no_states; ++j){
             bool _ = (bool)(final_states.find(i) != final_states.end());
             bool __ = (bool)(final_states.find(j) != final_states.end());
             if (!(_ ^ __)) unmarked.emplace(std::make_pair(i, j));
@@ -166,7 +166,6 @@ void Automaton::DFA_to_minimalDFA() {
     // Combine all unmarked nodes
     adj.resize(no_states);
     for (auto& it : unmarked) {
-        if (it.first == it.second) continue;
         adj[it.first].push_back(it.second);
         adj[it.second].push_back(it.first);
     }
