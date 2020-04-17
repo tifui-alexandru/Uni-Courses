@@ -3,9 +3,9 @@ Type = Minimal-DFA
 4 transitions
 The transitions are:
 0 1 a
-0 0 b
+0 1 b
 1 0 a
 1 0 b
 Initial state: 0
 1 final states:
-1 
+0 
