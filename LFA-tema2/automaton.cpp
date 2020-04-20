@@ -13,7 +13,7 @@ void Automaton::lambdaNFA_to_NFA() {
                 for (auto& it : G[nxt].T[SIGMA - 1])
                     if (G[i].T[SIGMA - 1].find(it) == G[i].T[SIGMA - 1].end()) {
                         new_transitions = true;
-                        G[i].T[SIGMA - 1].insert(it);
+                        G[i].T[SIGMA - 1].emplace(it);
                     }
             }
         }
@@ -131,6 +131,104 @@ void Automaton::DFA_to_minimalDFA() {
     int new_no_states = 0, new_no_trans = 0;
     std::unordered_set <int> new_final_states;
     std::vector <node> new_G;
+
+    // Eliminate 'dead' nodes
+    std::vector <node> Gt(no_states);
+    for (int i = 0; i < no_states; ++i)
+        for (int letter = 0; letter < SIGMA; ++letter) {
+            for (auto& nxt : G[i].T[letter])
+                Gt[nxt].T[letter].emplace(i);
+        }
+
+    std::unordered_set <int> vis1, vis2;
+    std::queue <int> q;
+
+    // Eliminate states not reachable from the initial state
+    q.push(initial_state);
+    vis1.emplace(initial_state);
+    while (!q.empty()) {
+        int top = q.front(); q.pop();
+        for (int letter = 0; letter < SIGMA; ++letter) {
+            for (auto& nxt : G[top].T[letter])
+                if (vis1.find(nxt) == vis1.end()) {
+                    vis1.emplace(nxt);
+                    q.push(nxt);
+                }
+        }
+    }
+
+    // Eliminate states from which one can't reach a final state
+    for (auto& st : final_states) {
+        q.push(st);
+        vis2.emplace(st);
+    }
+    while (!q.empty()) {
+        int top = q.front(); q.pop();
+        for (int letter = 0; letter < SIGMA; ++letter) {
+            for (auto& nxt : Gt[top].T[letter])
+                if (vis2.find(nxt) == vis2.end()) {
+                    vis2.emplace(nxt);
+                    q.push(nxt);
+                }
+        }
+    }
+
+    // Check if the minimal DFA is null
+    bool null_DFA = false;
+    if (vis2.find(initial_state) == vis2.end()) null_DFA = true;
+    int cnt = 0;
+    for (auto& st : final_states)
+        if (vis1.find(st) != vis1.end()) ++cnt;
+    if (cnt == 0) null_DFA = true;
+
+    if (null_DFA) {
+        no_states = no_trans = no_final_states = 0;
+        initial_state = -1;
+        final_states.clear();
+        G.clear();
+        type = "Minimal-DFA";
+        Gt.clear(); vis1.clear(); vis2.clear();
+        return;
+    }
+
+    // Actually eliminate the states
+    std::vector <int> new_state_corespondent(no_states, 0);
+    for (int i = 0; i < no_states; ++i)
+        if (vis1.find(i) == vis1.end() or vis2.find(i) == vis2.end())
+            new_state_corespondent[i] = -1; // to be eliminated
+
+    Gt.clear(); vis1.clear(); vis2.clear();
+
+    new_no_states = no_states;
+
+    int curr_corespondent = -1;
+    for (int i = 0; i < no_states; ++i)
+        if (new_state_corespondent[i] != -1) 
+            new_state_corespondent[i] = ++curr_corespondent;
+        else 
+            --new_no_states;
+    
+    new_G.resize(new_no_states);
+    for (int i = 0; i < no_states; ++i) {
+        if (new_state_corespondent[i] == -1) continue; // eliminated
+
+        if (final_states.find(i) != final_states.end())
+            new_final_states.emplace(i);
+
+        for (int letter = 0; letter < SIGMA; ++letter)
+            for (auto& nxt : G[i].T[letter]) {
+                if (new_state_corespondent[nxt] == -1) continue; // eliminated
+                ++new_no_trans;
+                new_G[new_state_corespondent[i]].T[letter].emplace(new_state_corespondent[nxt]); // add new transition
+            }
+    }
+
+    no_states = new_no_states; no_trans = new_no_trans; initial_state = new_state_corespondent[initial_state];
+    final_states.clear(); final_states = new_final_states; new_final_states.clear();
+    no_final_states = final_states.size();
+    G.clear(); G = new_G; new_G.clear();
+    new_state_corespondent.clear();
+    new_no_trans = new_no_states = 0;
 
     // Mark pairs of nodes
     std::set < std::pair <int, int> > unmarked;
