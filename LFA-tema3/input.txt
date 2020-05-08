@@ -1,0 +1,8 @@
+S a
+S aA
+S bB
+S lambda
+A aA
+A aS
+B cS
+B lambda

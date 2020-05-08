@@ -29,7 +29,7 @@ void test_sort_alg(int idx, int* v, int N, int* sorted_arr) {
 	switch (idx) {
 		case 0:
 			start = clock();
-			insertion::sort(v, v + N);
+			radix::sort(v, v + N);
 			stop = clock();
 			break;
 		case 1:

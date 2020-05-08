@@ -74,13 +74,15 @@ int main() {
 
 	cout << 20 << '\n'; // number of tests
 
-	for (int t = 0; t < 4; ++t) {
-		print_test(20, 20, t);
-		print_test(1e3, 1e3, t);
-		print_test(1e4, 1e7, t);
-		print_test(1e5, 1e9, t);
-		print_test(5e5, INT_MAX, t);
-	}
+	// for (int t = 0; t < 4; ++t) {
+	// 	print_test(20, 20, t);
+	// 	print_test(1e3, 1e3, t);
+	// 	print_test(1e4, 1e7, t);
+	// 	print_test(1e5, 1e9, t);
+	// 	print_test(5e5, INT_MAX, t);
+	// }
+
+	print_test(5e6, INT_MAX, 0);
 
 	return 0;
 }
