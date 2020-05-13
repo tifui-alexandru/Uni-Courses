@@ -261,10 +261,6 @@ void Automaton::DFA_to_minimalDFA() {
         temp.clear();
     }
 
-    std::cerr << unmarked.size() << '\n';
-    for (auto& it : unmarked)
-        std::cerr << it.first << ' ' << it.second << '\n';
-
     // Combine all unmarked nodes
     adj.resize(no_states);
     for (auto& it : unmarked) {
@@ -308,9 +304,41 @@ void Automaton::transform() {
     // DFA_to_minimalDFA();
 }
 
+// only works for DFA
+std::string Automaton::getRegEx() {
+    if (type == "NFA" or type == "Lambda-NFA") return "please transform to DFA first";
+
+    std::string R[no_states + 1][no_states][no_states];
+
+    for (int i = 0; i < no_states; ++i) 
+        R[0][i][i] = "lambda";
+    for (int i = 0; i < no_states; ++i) 
+        for (int letter = 0; letter < 26; ++letter)
+            for (auto& nxt : G[i].T[letter]) {
+                if (R[0][i][nxt].empty()) 
+                    R[0][i][nxt].push_back(letter + 'a');
+                else {
+                    R[0][i][nxt].push_back('+');
+                    R[0][i][nxt].push_back(letter + 'a');
+                }
+            }
+
+    for (int k = 1; k <= no_states; ++k)
+        for (int i = 0; i < no_states; ++i)
+            for (int j = 0; j < no_states; ++j)
+                R[k][i][j] = "(" + R[k - 1][i][j] + ")" + " + (" + R[k - 1][i][k] + "(" + R[k - 1][k][k] + ")*" + R[k - 1][k][j] + ")";
+
+    std::string ans;
+    for (auto& it : final_states)
+        ans += "(" + R[no_states][initial_state][it] + ") + ";
+    ans.pop_back(); ans.pop_back(); ans.pop_back();
+    return ans;   
+}
+
 std::istream& operator >> (std::istream &in, Automaton &obj) {
     in >> obj.type;
     in >> obj.no_states >> obj.no_trans;
+
     obj.G.resize(obj.no_states);
 
     for (int idx = 0; idx < obj.no_trans; ++idx) {

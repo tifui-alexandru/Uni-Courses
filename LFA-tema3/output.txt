@@ -1,3 +1,5 @@
+(((((lambda) + (a(lambda)*b)) + ((b) + (a(lambda)*)((lambda) + ((lambda)*))*(a) + ((lambda)*b))) + ((() + (a(lambda)*a)) + ((b) + (a(lambda)*)((lambda) + ((lambda)*))*(a) + ((lambda)*a))(((lambda+a+b) + ((lambda)*a)) + (() + ((lambda)*)((lambda) + ((lambda)*))*(a) + ((lambda)*a)))*(() + ((lambda)*b)) + (() + ((lambda)*)((lambda) + ((lambda)*))*(a) + ((lambda)*b)))) + ((((b) + (lambda(lambda)*b)) + (() + (lambda(lambda)*)((lambda) + ((lambda)*))*(a) + ((lambda)*b))) + (((a) + (lambda(lambda)*a)) + (() + (lambda(lambda)*)((lambda) + ((lambda)*))*(a) + ((lambda)*a))(((lambda+a+b) + ((lambda)*a)) + (() + ((lambda)*)((lambda) + ((lambda)*))*(a) + ((lambda)*a)))*(() + ((lambda)*b)) + (() + ((lambda)*)((lambda) + ((lambda)*))*(a) + ((lambda)*b)))()*))
+
 Type = DFA
 5 states
 8 transitions

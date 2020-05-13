@@ -71,6 +71,7 @@ public:
     friend std::ostream& operator << (std::ostream &out, const Automaton &obj);
 
     void transform();
+    std::string getRegEx();
 };
 
 #endif
