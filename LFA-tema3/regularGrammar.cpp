@@ -35,11 +35,13 @@ Automaton RegularGrammar::convert_to_automaton() const {
         }
     }
 
+    ++automaton_states; // the final state
+
     Automaton ret(automaton_states);
 
     for (auto& it : production_rules) 
         for (auto& itt : it.second) {
-            if (itt == "lambda") ret.set_final_state(state_number[it.first]);
+            if (itt == "lambda") ret.construct_edge(state_number[it.first], automaton_states - 1, "lambda");
             else if (islower(itt[0])) {
                 std::string s1, s2;
                 s1.push_back(itt[0]);
@@ -49,9 +51,7 @@ Automaton RegularGrammar::convert_to_automaton() const {
                     ret.construct_edge(state_number[it.first], state_number[s2], s1);
                 }
                 else {
-                    ret.construct_edge(state_number[it.first], automaton_states, s1);
-                    ret.set_final_state(automaton_states);
-                    ++automaton_states;
+                    ret.construct_edge(state_number[it.first], automaton_states - 1, s1);
                 }
             }
             else {
@@ -60,6 +60,7 @@ Automaton RegularGrammar::convert_to_automaton() const {
         }
 
     ret.set_initial_state(state_number["S"]);
+    ret.set_final_state(automaton_states - 1);
     ret.transform();
     return ret;
 }
